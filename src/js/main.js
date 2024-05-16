@@ -1,22 +1,21 @@
 var reportsWidget = {
     options: {
-        containerSelector: '.reports',
-        template: (
-            '{{#.}}' +
+        containerSelector: ".reports",
+        template:
+            "{{#.}}" +
             '<article class="reports_item">' +
             '<a href="{{cover}}" target="_blank">' +
-            '<img class="reports_cover" src="{{cover}}" alt="{{title}} Cover" title="{{title}} Cover"/>' 
-            '</a>' +
+            '<img class="reports_cover" src="{{cover}}" alt="{{title}} Cover" title="{{title}} Cover"/>' +
+            "</a>" +
             '<footer class="reports_docs">' +
-            '{{#documents}}' +
+            "{{#documents}}" +
             '<h3 class="reports_title">' +
             '<a href="{{url}}" target="_blank" title="{{title}}">{{title}} <span>({{file_size}} {{file_type}})</span></a>' +
-            '</h3>' +
-            '{{/documents}}' +
-            '</footer>' +
-            '</article>' +
-            '{{/.}}'
-        )
+            "</h3>" +
+            "{{/documents}}" +
+            "</footer>" +
+            "</article>" +
+            "{{/.}}",
     },
 
     init: function () {
@@ -28,7 +27,7 @@ var reportsWidget = {
             options = inst.options;
 
         $(options.containerSelector).html(Mustache.render(options.template, reports));
-    }
+    },
 };
 
 reportsWidget.init();
